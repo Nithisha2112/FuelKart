@@ -1,25 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './Form';
+import RootLayout from './RootLayOut';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
 function App() {
+  const router =createBrowserRouter([
+    {
+      path: "/",
+      element: <Form/>,
+      // children: [
+      //   {
+      //     path: "/",
+      //     element: <Form/>
+      //    }
+       
+      // ]
+    }
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+     <RouterProvider router={router}  /> 
+    
+
     </div>
   );
 }
 
+
 export default App;
+
+// import React from 'react';
+// import './App.css';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Form from './Form';
+// import RootLayout from './RootLayout';
+
+// function App() {
+//   return (
+//     <Router>
+//       <div className="App">
+//         <Routes>
+          
+//           <Route path="/Form" element={<Form />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
